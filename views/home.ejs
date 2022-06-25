@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<link href="http://fonts.cdnfonts.com/css/captain-meredith" rel="stylesheet">
+<html>
+<style>
+    body {
+        text-align: center;
+    }
+
+    input {
+        padding: 13px;
+        width: 75%;
+    }
+
+    button {
+        border: 0px solid white;
+        border-radius: 3px;
+        cursor: pointer;
+        padding: 10px;
+        background-color: seagreen;
+        box-shadow: 1px 2px 3px gray;
+    }
+
+    button:hover {
+        border-radius: 5px;
+        background-color: teal;
+        font-size: 90%;
+        box-shadow: 2px 3px 4px gray;
+    }
+
+    h1 {
+        text-shadow: 1px 2px 1px skyblue;
+        font-family: 'Captain Meredith', sans-serif;
+        color: palevioletred;
+    }
+
+    h4 {
+        font-size: 20px;
+    }
+
+    .search {
+        background-color: darkgrey;
+        box-shadow: 1px 2px 3px gray;
+        margin: 10px;
+    }
+
+    .search:hover {
+        box-shadow: 2px 3px 4px gray;
+        background-color: salmon;
+    }
+
+    .starred {
+        position: absolute;
+        top: 20px;
+        right: 100px;
+        background-color: tomato;
+        box-shadow: 1px 2px 3px gray;
+    }
+
+    .starred:hover {
+        background-color: mediumslateblue;
+    }
+
+    .popular {
+        margin-left: 15%;
+        width: 70%;
+    }
+
+    .plus {
+        margin-top: 20px;
+        color: white;
+        background-color: lightgreen;
+    }
+
+    .remove {
+        color: white;
+        background-color: maroon;
+    }
+</style>
+
+<body>
+    <button class="starred" onclick="getstarred()">My Favourites</button>
+    <h1>Demo Twitter API</h1>
+    <h2>Enter keywords to search</h2>
+    <input type="text" id="search"><br><br>
+    <button class="btn" type="submit" onclick="fun()">SEARCH</button>
+    <div class="popular">
+        <% if(keywords.length>0) { %>
+            <h4>Popular Searches</h4>
+            <% for(let kwd of keywords) { %>
+                <button class="search" id=<%=kwd.keyword%> onclick="search(id)"><%=kwd.keyword%></button>
+            <% } %>
+        <% } %>
+        <br>
+        <button class="plus" onclick="addKeyword()"><b>Add Keyword</b></button>
+        <button class="remove" onclick="clearKeywords()"><b>Clear Keywords</b></button>
+    </div>
+</body>
+<script>
+    function fun() {
+        let kwd = document.getElementById('search').value;
+        window.location.href = "http://localhost:5000/tweets/" + kwd;
+    }
+    function search(id) {
+        window.location.href = "http://localhost:5000/tweets/" + id;
+    }
+    function getstarred() {
+        window.location.href = "http://localhost:5000/tweets/favourites/";
+    }
+    function addKeyword() {
+        window.location.href = "http://localhost:5000/home/addKeyword/";
+    }
+    function clearKeywords() {
+        window.location.href = 'http://localhost:5000/home/keywords/clear/';
+    }
+</script>
+
+</html>
