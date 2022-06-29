@@ -18,10 +18,6 @@ async function fetchAllKeywordInformation() {
     return data;
 }
 
-async function deleteSingleKeyword(kwd) {
-    await keywords.deleteMany({keyword: kwd});
-}
-
 async function deleteAllKeywords() {
     await keywords.deleteMany({});
 }

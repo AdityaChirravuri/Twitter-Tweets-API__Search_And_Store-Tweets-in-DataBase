@@ -3,6 +3,7 @@
     <head>
         <title>Twitter API</title>
         <link href="http://fonts.cdnfonts.com/css/dreamcast" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
                 
         <style>
             body {
@@ -113,14 +114,17 @@
                 background-color: tan;
                 box-shadow: 2px 3px 4px gray;
             }
+            #twitter {
+                text-shadow: 0px 0px 0px wheat;
+            }
         </style>
     </head>
     <body>
         <header>
-            <h1>Demo Twitter API</h1>
+            <h1>Demo Twitter API <i id="twitter" class="fa fa-twitter" style="font-size:50px;color:green"></i></h1>
         </header>
         <button class="favourites" onclick="favourites()">My Favourites</button>
-        <h4>Search Results on <%=kwd%> <%=tweetCnt %> Tweets and <%=mentionCnt%> Retweets </h4>
+        <h4>Search Results on <%=kwd%> <%=tweetCnt %> Tweets and <%=mentionCnt%> Retweets</h4>
         <button onclick="fun()" class="home">HomePage</button>
         <% if(tweetCnt>0) {%>
         <h2>Tweets</h2>

@@ -10,7 +10,7 @@ module.exports = function (app) {
 
     app.get("/home", async (req, res) => {
         let keywords = await fetchAllKeywordInformation();
-        res.render('home', { keywords });
+        res.render('home', { keywords});
     })
 
     app.get("/tweets/starredSuccessfully/:keyword/:id", async function (req, res) {

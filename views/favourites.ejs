@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html>
     <link href="http://fonts.cdnfonts.com/css/dreamcast" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
     h1 {
+        color: slateblue;
+        text-shadow: 0px 1px 2px skyblue;
+        font-size: 35px;
         font-family: 'Dreamcast', sans-serif;
         text-align: center;
     }
@@ -50,17 +54,17 @@
     }
     .home {
         position: absolute;
-        top: 11px;
+        top: 15px;
         border-radius: 5px;
-        right: 760px;
+        right: 820px;
         box-shadow: 1px 2px 3px gray;
     }
     .clear {
         position: absolute;
         cursor: pointer;
-        top: 11px;
+        top: 15px;
         border-radius: 5px;
-        left: 755px;
+        left: 815px;
         box-shadow: 1px 2px 3px gray;
         background: linear-gradient(60deg, purple, violet);
     }
@@ -109,7 +113,7 @@
         <input type="text" name="" id="search" placeholder="Enter keyword" required>
         <button class="search" onclick="fun3()">Search</button>
         <button onclick="fun()" class="home">HomePage</button>
-        <h1>My Favourites</h1>
+        <h1>My Favourite Tweets <i id="twitter" class="fa fa-twitter" style="font-size:35px;color:slateblue"></i></h1>
         <button onclick="fun2()" class="clear">CLEAR </button>
     </p>
     <% for(let tweet of favourites) { %>

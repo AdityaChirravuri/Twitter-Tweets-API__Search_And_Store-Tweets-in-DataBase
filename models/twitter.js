@@ -1,12 +1,8 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb+srv://chas382:17405crl@cluster0.pugyfg2.mongodb.net/?retryWrites=true&w=majority')
+mongoose.connect('mongodb://localhost:27017/Twitter-API')
     .then(() => console.log('database is connected..!'))
     .catch((err) => console.error(err));
-
-// mongoose.connect('mongodb://localhost:27017/Twitter-API')
-//     .then(() => console.log('database is connected..!'))
-//     .catch((err) => console.error(err));
 
 const favoruiteSchema = new mongoose.Schema({
     id: Object,
